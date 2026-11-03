@@ -1,0 +1,110 @@
+# env files (except when appended with .example)
+.env
+.env.*
+.env*.local
+!.env*.example
+!.env.example
+
+# OS-specific
+.DS_Store
+Thumbs.db
+*~
+
+# VS-code
+.vscode/*.log
+.vscode/.browse.VC.db*
+*.code-workspace
+
+# Git
+*.orig
+*.rej
+*.tmp
+*.bak
+
+# Secrets
+*.key
+keys.txt
+
+# Homemanager
+*.backup
+
+# Cache
+*.cache
+*.swp
+*.swo
+*.swn
+*.un~
+Session.vim
+
+# Virtual Environments
+venv/
+.venv
+.envrc
+.direnv/
+
+# Build systems
+build/
+CMakeFiles/
+compile_commands.json
+*.egg-info/
+dist/
+.ninja_log
+.ninja_deps
+result
+result-*
+
+# Debug information
+*.pdb
+*.dwo
+vgcore*
+core
+core.[0-9]*
+
+
+# Executables
+*.exe
+*.out
+*.app
+
+# Language specific
+
+## Python
+.mypy_cache
+__pycache__
+.pytest_cache
+.ruff_cache
+*.pyc
+*.pyo
+*.pyd
+.coverage
+coverage.xml
+htmlcov/
+
+## C / C++
+*.d
+*.slo
+*.lo
+*.o
+*.obj
+*.gch
+*.pch
+*.ilk
+*.so
+*.dylib
+*.dll
+*.lai
+*.la
+*.a
+*.lib
+*.gcda
+*.gcno
+*.gcov
+*.profraw
+*.profdata
+asan.log*
+tsan.log*
+ubsan.log*
+
+## Fortran
+*.mod
+*.smod
