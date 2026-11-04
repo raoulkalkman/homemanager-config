@@ -17,7 +17,14 @@
     };
   };
 
-  outputs = inputs@{ self, nixpkgs, flake-parts, treefmt-nix, home-manager, ... }:
+  outputs =
+    inputs@{
+      nixpkgs,
+      flake-parts,
+      treefmt-nix,
+      home-manager,
+      ...
+    }:
     flake-parts.lib.mkFlake { inherit inputs; } {
       systems = [
         "x86_64-linux"
@@ -31,7 +38,7 @@
         treefmt-nix.flakeModule
       ];
 
-      perSystem = { config, pkgs, system, ... }: {
+      perSystem = { config, pkgs, ... }: {
         # 1. Formatting Configuration
         treefmt = {
           projectRootFile = "flake.nix";
@@ -39,7 +46,7 @@
             # Standard opinionated formatter (or use programs.nixpkgs-fmt.enable / alejandra.enable)
             nixfmt.enable = true;
             deadnix.enable = true; # Removes unused code
-            statix.enable = true;  # Lints anti-patterns
+            statix.enable = true; # Lints anti-patterns
 
             # Format shell scripts, markdown, and yaml alongside your nix files
             shfmt.enable = true;
@@ -63,7 +70,7 @@
             config.treefmt.build.wrapper
 
             # Convenience CLI tools for flakes / deployment
-            nh       # Modern Nix CLI helper
+            nh # Modern Nix CLI helper
             nix-diff # Analyze build differences
           ];
 

@@ -1,9 +1,9 @@
 {
-    config,pkgs, ...
+  ...
 }:
 {
-imports = [
+  imports = [
     ../../modules/profiles/common.nix
     ../../modules/profiles/development.nix
-];
+  ];
 }
